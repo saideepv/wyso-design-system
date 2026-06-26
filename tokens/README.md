@@ -10,7 +10,8 @@ change in one place without a find-and-replace across the system.
 | `color.semantic.css` | semantic | Usage-named aliases (`--color-primary`, `--text-ink`, `--state-correct-*`...) over the primitives. |
 | `typography.css` | primitive + usage scale | Baloo 2 (display) + Atkinson Hyperlegible (body). LOCKED pairing. |
 | `spacing.css` | primitive | 4px base spacing/sizing scale. |
-| `effects.css` | primitive + usage | Radii, organic "blob" shapes, signature gradients, shadows, motion easing. |
+| `effects.css` | primitive + usage | Radii, organic "blob" shapes, signature gradients, shadows. |
+| `motion.css` | primitive | Animation durations + easing curves. Also resets motion globally for `prefers-reduced-motion`. |
 | `index.css` | — | Imports every layer above in the correct order. |
 
 ## Status

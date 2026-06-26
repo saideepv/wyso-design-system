@@ -1,0 +1,38 @@
+/**
+ * Wyso Design System — Motion Tokens
+ * The "DNA" of animation: durations and easing curves. Components should
+ * always reach for these tokens, never hardcode a duration or a
+ * cubic-bezier inline.
+ *
+ * Moved out of effects.css into its own layer — see docs/decisions/ 0003.
+ */
+
+:root {
+  /* ---- Durations ---- */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;   /* micro-interactions: button press, chip toggle */
+  --duration-normal: 300ms; /* default: entrances, exits, most transitions */
+  --duration-slow: 500ms;   /* large/celebratory movement: toasts, reward reveals */
+
+  /* ---- Easing curves ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);     /* default for everything else */
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);          /* elements entering the screen */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);           /* elements leaving the screen */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* playful pops — buttons, rewards, blobs */
+}
+
+/**
+ * Respect the OS-level motion preference everywhere by default. Anything
+ * that conveys essential state (a loading spinner) must opt back in
+ * explicitly with higher specificity — see docs/components/atoms/motion.css.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
