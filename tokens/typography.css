@@ -1,0 +1,41 @@
+/**
+ * Wyso Design System — Typography Tokens
+ * LOCKED pairing: Baloo 2 (display) + Atkinson Hyperlegible (body).
+ * Baloo 2 ships native Devanagari support; Atkinson Hyperlegible was built
+ * for letterform clarity (Il1, b/d, O0) — both matter for a middle-school,
+ * Hindi/Hinglish-first audience.
+ *
+ * Font files are not vendored in this repo yet. Wire up one of:
+ *   - Self-host: drop the woff2 files in assets/fonts/ and add @font-face
+ *     rules pointing at them (preferred for production — no third-party
+ *     request, predictable licensing).
+ *   - Google Fonts: https://fonts.google.com/specimen/Baloo+2
+ *                    https://fonts.google.com/specimen/Atkinson+Hyperlegible
+ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Baloo 2', system-ui, sans-serif;            /* headings, buttons, companion name */
+  --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif; /* body copy, UI labels */
+
+  /* ---- Scale (px) — voice-first app skews large ---- */
+  --type-display-xl: 48px;  /* hero / celebration headings */
+  --type-display-lg: 36px;  /* screen titles */
+  --type-display-md: 28px;  /* section titles */
+  --type-title: 22px;       /* card titles */
+  --type-body-lg: 17px;     /* primary reading size */
+  --type-body: 15px;        /* default UI text */
+  --type-caption: 13px;     /* captions, helper text — floor, never smaller */
+  --type-overline: 11.5px;  /* overlines: uppercase, letter-spacing 0.12em */
+
+  /* ---- Weights ---- */
+  --weight-display: 700;          /* Baloo 2 headings */
+  --weight-display-strong: 800;
+  --weight-body: 400;
+  --weight-body-bold: 700;
+
+  /* ---- Leading / tracking ---- */
+  --leading-display: 1.12;
+  --leading-body: 1.65;
+  --tracking-overline: 0.12em;
+}

@@ -1,0 +1,45 @@
+/**
+ * Wyso Design System — Color Semantic Tokens
+ * Usage-named aliases over color.primitives.css. Always reach for these in
+ * components/patterns; only the semantic layer should be consumed downstream.
+ *
+ * Requires: color.primitives.css loaded first.
+ */
+
+:root {
+  /* ---- Roles ---- */
+  --color-primary: var(--green-600);        /* actions, voice, Aura identity */
+  --color-primary-soft: var(--green-400);   /* progress, soft success */
+  --color-on-primary: var(--green-050);
+  --color-secondary: var(--gold-600);       /* rewards, sparks, celebration */
+  --color-secondary-soft: var(--gold-300);  /* tracks, tinted surfaces */
+  --color-on-secondary: #4A3D08;
+  --color-accent: var(--mint-400);          /* info, missions, correct states; keep to <=10% of any screen */
+  --color-accent-strong: var(--mint-600);
+  --color-on-accent: var(--mint-800);
+
+  /* ---- Surfaces ---- */
+  --surface-canvas: var(--cream-canvas);
+  --surface-card: var(--cream-card);
+  --surface-primary-tint: var(--green-100);
+  --surface-secondary-tint: var(--gold-100);
+  --surface-accent-tint: var(--mint-100);
+
+  /* ---- Text ---- */
+  --text-ink: var(--green-900);
+  --text-body: var(--olive-600);
+  --text-muted: var(--olive-400);
+  --text-overline: var(--olive-label);
+
+  /* ---- Borders ---- */
+  --border-soft: var(--cream-line);
+  --border-strong: var(--cream-line-strong);
+
+  /* ---- Feedback states (never red/amber — mint = correct, gold = retry) ---- */
+  --state-correct-bg: var(--mint-100);
+  --state-correct-border: var(--mint-400);
+  --state-correct-text: var(--mint-800);
+  --state-retry-bg: var(--gold-100);
+  --state-retry-border: var(--gold-border);
+  --state-retry-text: var(--gold-800);
+}

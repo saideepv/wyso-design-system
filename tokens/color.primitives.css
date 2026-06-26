@@ -1,0 +1,46 @@
+/**
+ * Wyso Design System — Color Primitives
+ * "Lemon Mint" palette (LOCKED). Raw values only — never reference these
+ * directly in product code, use color.semantic.css instead.
+ *
+ * Rules baked into this palette:
+ *  - No purple/violet, ever.
+ *  - No pure grey, no pure white (#fff), no pure black (#000).
+ *  - Warm cream neutrals instead of grey.
+ *
+ * Source of truth: extracted from the v0.2 foundations prototype.
+ */
+
+:root {
+  /* ---- Green (primary family) ---- */
+  --green-900: #2F4A1D; /* ink */
+  --green-700: #4A6B1C;
+  --green-600: #6A961F; /* the deep green */
+  --green-500: #7FA844;
+  --green-400: #92B473; /* leaf */
+  --green-100: #EDF5DC;
+  --green-050: #F7FBEA; /* on-primary cream */
+
+  /* ---- Gold (secondary family) ---- */
+  --gold-800: #6E6410;
+  --gold-700: #8F7510;
+  --gold-600: #EEC824; /* the golden */
+  --gold-300: #F2DC99; /* pale yellow */
+  --gold-100: #FAF0C8;
+  --gold-border: #EBD98E;
+
+  /* ---- Mint (accent family) ---- */
+  --mint-800: #1F6363;
+  --mint-600: #4FA9A9;
+  --mint-400: #A0DFDF; /* the mint */
+  --mint-100: #DBF1F1;
+
+  /* ---- Neutrals (warm cream, not grey) ---- */
+  --cream-canvas: #F5F2E3;
+  --cream-card: #FDFBF1;
+  --cream-line: #E6E1C6;
+  --cream-line-strong: #DEDAC0;
+  --olive-600: #5C6248;
+  --olive-400: #9C9A7C;
+  --olive-label: #98975F;
+}

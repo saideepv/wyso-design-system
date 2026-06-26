@@ -1,0 +1,11 @@
+/**
+ * Wyso Design System — Token Entry Point
+ * Import this single file to get every token layer, in the order that
+ * makes their var() references resolve correctly.
+ */
+
+@import './color.primitives.css';
+@import './color.semantic.css';
+@import './typography.css';
+@import './spacing.css';
+@import './effects.css';

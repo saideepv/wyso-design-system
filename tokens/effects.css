@@ -1,0 +1,49 @@
+/**
+ * Wyso Design System — Shape, Gradient, Shadow & Motion Tokens
+ * These ARE the brand: gradients used generously, organic blobs, gentle
+ * tilts. Requires color.primitives.css / color.semantic.css for the colors
+ * referenced inside the gradient stops below.
+ */
+
+:root {
+  /* ---- Radii ---- */
+  --radius-card: 28px;
+  --radius-panel: 18px;
+  --radius-bubble: 20px;
+  --radius-bubble-tail: 6px; /* the "speaking corner" of chat bubbles */
+  --radius-pill: 999px;
+
+  /* ---- Organic blob shapes (imperfect circles) ----
+     Apply as border-radius on square elements; pair with a slight rotate. */
+  --blob-a: 56% 44% 49% 51% / 50% 46% 54% 50%;
+  --blob-b: 47% 53% 55% 45% / 48% 52% 47% 53%;
+  --blob-c: 52% 48% 44% 56% / 55% 49% 51% 45%;
+  --blob-d: 49% 51% 53% 47% / 46% 54% 48% 52%;
+
+  /* ---- Signature gradients (use generously) ---- */
+  --grad-zest: linear-gradient(90deg, #6A961F, #A0DFDF);    /* hero strips, headers */
+  --grad-grow: linear-gradient(90deg, #6A961F, #92B473);    /* primary buttons, progress fills */
+  --grad-sunny: linear-gradient(90deg, #EEC824, #F2DC99);   /* rewards, golden moments */
+  --grad-avatar: linear-gradient(135deg, #6A961F, #92B473); /* companion avatar blobs */
+  --grad-text: linear-gradient(90deg, #6A961F, #45A3A3);    /* gradient text highlights */
+  --grad-strip-height: 9px; /* the thin gradient strip on top of cards */
+
+  /* ---- Tilt (use sparingly — celebration/hero headings & playful chips
+          ONLY; everything else stays straight) ---- */
+  --tilt-hero: -1deg;
+  --tilt-chip: -1.2deg;
+  --tilt-chip-alt: 1.2deg;
+
+  /* ---- Shadows (soft, colour-washed; never grey-black) ---- */
+  --shadow-card: 0 18px 48px rgba(110, 120, 40, 0.10);
+  --shadow-float: 0 24px 60px rgba(110, 120, 40, 0.14);
+  --shadow-btn-primary: 0 6px 16px rgba(106, 150, 31, 0.30);
+  --shadow-btn-gold: 0 6px 16px rgba(238, 200, 36, 0.32);
+  --shadow-mic: 0 10px 24px rgba(106, 150, 31, 0.22);
+
+  /* ---- Motion ---- */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* playful pops */
+  --ease-soft: cubic-bezier(0.25, 0.8, 0.35, 1);    /* everything else */
+  --duration-quick: 160ms;
+  --duration-base: 260ms;
+}
