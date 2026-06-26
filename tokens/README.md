@@ -6,7 +6,7 @@ change in one place without a find-and-replace across the system.
 
 | File | Layer | Notes |
 | --- | --- | --- |
-| `color.primitives.css` | primitive | Raw "Lemon Mint" palette. LOCKED. No purple, no grey, no pure white/black. |
+| `color.primitives.css` | primitive | Raw "Lemon Mint" palette (LOCKED, no purple, no pure white/black) plus a 13-step achromatic grey utility ramp for neutral UI / future dark mode / data viz. |
 | `color.semantic.css` | semantic | Usage-named aliases (`--color-primary`, `--text-ink`, `--state-correct-*`...) over the primitives. |
 | `typography.css` | primitive + usage scale | Baloo 2 (display) + Atkinson Hyperlegible (body). LOCKED pairing. |
 | `spacing.css` | primitive | 4px base spacing/sizing scale. |
