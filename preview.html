@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wyso Design System — Token Preview</title>
+
+<!-- Preview-only: Google Fonts CDN so this page renders the real type
+     pairing without vendoring font files. Production should self-host
+     per the note at the top of tokens/typography.css. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="tokens/index.css">
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--surface-canvas);
+    color: var(--text-body);
+    font-family: var(--font-body);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: var(--space-12) var(--page-gutter); }
+  section { margin-bottom: var(--space-12); }
+  h1, h2, h3 { font-family: var(--font-display); color: var(--text-ink); margin: 0; }
+  h1 { font-size: var(--type-display-lg); font-weight: var(--weight-display-strong); margin-bottom: var(--space-2); }
+  h2 { font-size: var(--type-display-md); font-weight: var(--weight-display); margin-bottom: var(--space-4); }
+  h3 { font-size: var(--type-title); font-weight: 600; margin-bottom: var(--space-3); }
+  p { margin: 0; }
+  code { background: var(--surface-primary-tint); color: var(--green-700); padding: 2px 6px; border-radius: 6px; font-size: 0.92em; }
+  .overline {
+    font-size: var(--type-overline);
+    font-weight: var(--weight-body-bold);
+    letter-spacing: var(--tracking-overline);
+    text-transform: uppercase;
+    color: var(--text-overline);
+    margin-bottom: var(--space-3);
+  }
+  .card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-8);
+  }
+
+  /* ---- Color swatches ---- */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-4); }
+  .swatch { border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--border-soft); background: var(--surface-card); }
+  .swatch-color { height: 56px; }
+  .swatch-label { padding: var(--space-2) var(--space-3); }
+  .swatch-label b { color: var(--text-ink); display: block; font-size: 12.5px; }
+  .swatch-label span { color: var(--text-muted); font-size: 11px; }
+
+  .ramp-family { margin-bottom: var(--space-4); }
+  .ramp-name { font-size: var(--type-caption); font-weight: 700; color: var(--text-ink); margin-bottom: var(--space-1); }
+  .ramp { display: flex; border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--border-soft); }
+  .ramp-step { flex: 1; height: 36px; }
+
+  /* ---- Typography ---- */
+  .type-row { display: grid; grid-template-columns: 150px 1fr; gap: var(--space-4); align-items: baseline; padding: var(--space-2) 0; border-bottom: 1px solid var(--border-soft); }
+  .type-row:last-child { border-bottom: none; }
+  .type-row .meta { font-size: 11.5px; color: var(--text-muted); }
+
+  /* ---- Spacing ---- */
+  .space-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-2); }
+  .space-row .label { width: 130px; font-size: var(--type-caption); color: var(--text-muted); flex: none; }
+  .space-row .bar { background: var(--grad-grow); border-radius: var(--radius-pill); height: 14px; }
+
+  /* ---- Effects ---- */
+  .row-wrap { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: flex-start; }
+  .effect-item { text-align: center; font-size: 11.5px; color: var(--text-muted); }
+  .blob { width: 64px; height: 64px; margin: 0 auto var(--space-2); }
+  .radius-box { width: 64px; height: 64px; background: var(--color-primary-soft); margin: 0 auto var(--space-2); }
+  .grad-chip { width: 160px; height: 40px; border-radius: var(--radius-pill); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--color-on-primary); margin-bottom: var(--space-2); }
+  .shadow-box { width: 130px; height: 80px; background: var(--surface-card); border-radius: var(--radius-card); display: flex; align-items: center; justify-content: center; font-size: 11.5px; color: var(--text-muted); margin: 0 auto var(--space-2); }
+
+  /* ---- Motion demo ---- */
+  .motion-demo-btn {
+    font-family: var(--font-display);
+    font-weight: var(--weight-display);
+    font-size: var(--type-body);
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    background: var(--grad-grow);
+    color: var(--color-on-primary);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-btn-primary);
+    transition: transform var(--duration-fast) var(--ease-spring);
+  }
+  .motion-demo-btn:hover, .motion-demo-btn:focus-visible { transform: scale(1.06); }
+  .motion-demo-btn:active { transform: scale(0.96); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header style="margin-bottom: var(--space-12);">
+    <div class="overline">Wyso Design System · Token Preview</div>
+    <h1>Foundations, rendered.</h1>
+    <p>Loads <code>tokens/index.css</code> directly — if a token value changes, this page changes with it. No components yet, just the raw layers.</p>
+  </header>
+
+  <!-- ============ COLOR ============ -->
+  <section>
+    <h2>Color</h2>
+    <div class="card">
+      <div class="overline">Semantic roles — what components should actually use</div>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:var(--color-primary)"></div><div class="swatch-label"><b>color-primary</b><span>#6A961F · actions, voice</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--color-primary-soft)"></div><div class="swatch-label"><b>color-primary-soft</b><span>#92B473 · progress</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--color-secondary)"></div><div class="swatch-label"><b>color-secondary</b><span>#EEC824 · rewards</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--color-secondary-soft)"></div><div class="swatch-label"><b>color-secondary-soft</b><span>#F2DC99 · tracks</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--color-accent)"></div><div class="swatch-label"><b>color-accent</b><span>#A0DFDF · ≤10% rule</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--color-accent-strong)"></div><div class="swatch-label"><b>color-accent-strong</b><span>#4FA9A9</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--surface-canvas)"></div><div class="swatch-label"><b>surface-canvas</b><span>#F5F2E3</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--surface-card)"></div><div class="swatch-label"><b>surface-card</b><span>#FDFBF1</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--text-ink)"></div><div class="swatch-label"><b>text-ink</b><span>#2F4A1D</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--text-body)"></div><div class="swatch-label"><b>text-body</b><span>#5C6248</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--text-muted)"></div><div class="swatch-label"><b>text-muted</b><span>#9C9A7C</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--state-correct-bg); border-bottom:3px solid var(--state-correct-border)"></div><div class="swatch-label"><b>state-correct-*</b><span>mint — never green-checkmark-red</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--state-retry-bg); border-bottom:3px solid var(--state-retry-border)"></div><div class="swatch-label"><b>state-retry-*</b><span>gold — never red</span></div></div>
+      </div>
+
+      <div class="overline" style="margin-top: var(--space-8);">Primitives — the raw "Lemon Mint" ramps</div>
+      <div class="ramp-family">
+        <div class="ramp-name">Green</div>
+        <div class="ramp">
+          <div class="ramp-step" style="background:var(--green-900)"></div>
+          <div class="ramp-step" style="background:var(--green-700)"></div>
+          <div class="ramp-step" style="background:var(--green-600)"></div>
+          <div class="ramp-step" style="background:var(--green-500)"></div>
+          <div class="ramp-step" style="background:var(--green-400)"></div>
+          <div class="ramp-step" style="background:var(--green-100)"></div>
+          <div class="ramp-step" style="background:var(--green-050)"></div>
+        </div>
+      </div>
+      <div class="ramp-family">
+        <div class="ramp-name">Gold</div>
+        <div class="ramp">
+          <div class="ramp-step" style="background:var(--gold-800)"></div>
+          <div class="ramp-step" style="background:var(--gold-700)"></div>
+          <div class="ramp-step" style="background:var(--gold-600)"></div>
+          <div class="ramp-step" style="background:var(--gold-300)"></div>
+          <div class="ramp-step" style="background:var(--gold-100)"></div>
+        </div>
+      </div>
+      <div class="ramp-family">
+        <div class="ramp-name">Mint</div>
+        <div class="ramp">
+          <div class="ramp-step" style="background:var(--mint-800)"></div>
+          <div class="ramp-step" style="background:var(--mint-600)"></div>
+          <div class="ramp-step" style="background:var(--mint-400)"></div>
+          <div class="ramp-step" style="background:var(--mint-100)"></div>
+        </div>
+      </div>
+      <div class="ramp-family">
+        <div class="ramp-name">Cream &amp; olive (neutrals — never grey)</div>
+        <div class="ramp">
+          <div class="ramp-step" style="background:var(--cream-canvas)"></div>
+          <div class="ramp-step" style="background:var(--cream-card)"></div>
+          <div class="ramp-step" style="background:var(--cream-line)"></div>
+          <div class="ramp-step" style="background:var(--olive-400)"></div>
+          <div class="ramp-step" style="background:var(--olive-600)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <section>
+    <h2>Typography</h2>
+    <div class="card">
+      <div class="overline">Baloo 2 (display) + Atkinson Hyperlegible (body)</div>
+
+      <div class="type-row"><div class="meta">display-xl / 48 / 800</div><div style="font-family:var(--font-display); font-size:var(--type-display-xl); font-weight:var(--weight-display-strong); line-height:var(--leading-display);">Shabash! You did it</div></div>
+      <div class="type-row"><div class="meta">display-lg / 36 / 700</div><div style="font-family:var(--font-display); font-size:var(--type-display-lg); font-weight:var(--weight-display);">Today's mission awaits</div></div>
+      <div class="type-row"><div class="meta">display-md / 28 / 700</div><div style="font-family:var(--font-display); font-size:var(--type-display-md); font-weight:var(--weight-display);">Fractions &amp; fair sharing</div></div>
+      <div class="type-row"><div class="meta">title / 22 / 600</div><div style="font-family:var(--font-display); font-size:var(--type-title); font-weight:600;">Chapter 4 · Sound &amp; Music</div></div>
+      <div class="type-row"><div class="meta">body-lg / 17 / 400</div><div style="font-size:var(--type-body-lg); line-height:var(--leading-body);">When you share 12 laddoos among 4 friends, each friend gets 3.</div></div>
+      <div class="type-row"><div class="meta">body / 15 / 400</div><div style="font-size:var(--type-body);">Default UI text — Il1 · b/d · O0 stay unmistakable.</div></div>
+      <div class="type-row"><div class="meta">caption / 13 / 400</div><div style="font-size:var(--type-caption); color:var(--text-muted);">Captions and helper text — 13px is the floor.</div></div>
+      <div class="type-row"><div class="meta">overline / 11.5 / 700</div><div class="overline" style="margin:0;">TODAY'S MISSION</div></div>
+      <div class="type-row"><div class="meta">Devanagari</div><div style="font-family:var(--font-display); font-size:24px; font-weight:600;">नमस्ते! चलो सीखते हैं</div></div>
+      <div class="type-row"><div class="meta">Gradient text</div><div style="font-family:var(--font-display); font-size:24px; font-weight:700; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent;">for the one word that matters</div></div>
+    </div>
+  </section>
+
+  <!-- ============ SPACING ============ -->
+  <section>
+    <h2>Spacing</h2>
+    <div class="card">
+      <div class="overline">4px base unit</div>
+      <div class="space-row"><div class="label">space-1 · 4px</div><div class="bar" style="width:var(--space-1)"></div></div>
+      <div class="space-row"><div class="label">space-2 · 8px</div><div class="bar" style="width:var(--space-2)"></div></div>
+      <div class="space-row"><div class="label">space-3 · 12px</div><div class="bar" style="width:var(--space-3)"></div></div>
+      <div class="space-row"><div class="label">space-4 · 16px</div><div class="bar" style="width:var(--space-4)"></div></div>
+      <div class="space-row"><div class="label">space-5 · 20px</div><div class="bar" style="width:var(--space-5)"></div></div>
+      <div class="space-row"><div class="label">space-6 · 24px</div><div class="bar" style="width:var(--space-6)"></div></div>
+      <div class="space-row"><div class="label">space-8 · 32px</div><div class="bar" style="width:var(--space-8)"></div></div>
+      <div class="space-row"><div class="label">space-10 · 40px</div><div class="bar" style="width:var(--space-10)"></div></div>
+      <div class="space-row"><div class="label">space-12 · 48px</div><div class="bar" style="width:var(--space-12)"></div></div>
+      <div class="space-row"><div class="label">space-16 · 64px</div><div class="bar" style="width:var(--space-16)"></div></div>
+      <div class="space-row"><div class="label">mic-button-size · 84px</div><div class="bar" style="width:var(--mic-button-size); background:var(--grad-sunny);"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ EFFECTS ============ -->
+  <section>
+    <h2>Shape, gradient &amp; shadow</h2>
+    <div class="card">
+      <div class="overline">Organic blobs</div>
+      <div class="row-wrap" style="margin-bottom: var(--space-8);">
+        <div class="effect-item"><div class="blob" style="background:var(--color-primary); border-radius:var(--blob-a); transform:rotate(-2deg);"></div>blob-a</div>
+        <div class="effect-item"><div class="blob" style="background:var(--color-secondary); border-radius:var(--blob-b); transform:rotate(2deg);"></div>blob-b</div>
+        <div class="effect-item"><div class="blob" style="background:var(--color-accent); border-radius:var(--blob-c); transform:rotate(-3deg);"></div>blob-c</div>
+        <div class="effect-item"><div class="blob" style="background:var(--color-secondary-soft); border-radius:var(--blob-d); transform:rotate(1deg);"></div>blob-d</div>
+        <div class="effect-item"><div class="radius-box" style="border-radius:var(--radius-pill);"></div>radius-pill</div>
+        <div class="effect-item"><div class="radius-box" style="border-radius:var(--radius-card);"></div>radius-card</div>
+      </div>
+
+      <div class="overline">Signature gradients</div>
+      <div class="row-wrap" style="margin-bottom: var(--space-8);">
+        <div class="effect-item"><div class="grad-chip" style="background:var(--grad-zest);">grad-zest</div></div>
+        <div class="effect-item"><div class="grad-chip" style="background:var(--grad-grow);">grad-grow</div></div>
+        <div class="effect-item"><div class="grad-chip" style="background:var(--grad-sunny); color:var(--gold-800);">grad-sunny</div></div>
+        <div class="effect-item"><div class="grad-chip" style="background:var(--grad-avatar);">grad-avatar</div></div>
+      </div>
+
+      <div class="overline">Shadows — colour-washed, never grey-black</div>
+      <div class="row-wrap">
+        <div class="effect-item"><div class="shadow-box" style="box-shadow:var(--shadow-card);">shadow-card</div></div>
+        <div class="effect-item"><div class="shadow-box" style="box-shadow:var(--shadow-float);">shadow-float</div></div>
+        <div class="effect-item"><div class="shadow-box" style="box-shadow:var(--shadow-btn-primary);">shadow-btn-primary</div></div>
+        <div class="effect-item"><div class="shadow-box" style="box-shadow:var(--shadow-btn-gold);">shadow-btn-gold</div></div>
+        <div class="effect-item"><div class="shadow-box" style="box-shadow:var(--shadow-mic);">shadow-mic</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOTION ============ -->
+  <section>
+    <h2>Motion</h2>
+    <div class="card">
+      <div class="overline">Durations + easing — hover/press the button</div>
+      <button class="motion-demo-btn">duration-fast · ease-spring</button>
+      <p style="margin-top: var(--space-4); font-size: var(--type-caption); color: var(--text-muted);">
+        Tokens: <code>--duration-instant/fast/normal/slow</code> and
+        <code>--ease-standard/enter/exit/spring</code>. A global
+        <code>prefers-reduced-motion</code> reset already lives in
+        <code>tokens/motion.css</code> — if your OS has reduced motion on,
+        this button's transition is instant.
+      </p>
+    </div>
+  </section>
+
+  <footer style="padding-top: var(--space-6); border-top: 1px solid var(--border-soft); font-size: var(--type-caption); color: var(--text-muted);">
+    Generated from <code>tokens/</code> · see <code>tokens/README.md</code> for the full token reference.
+  </footer>
+
+</div>
+</body>
+</html>
